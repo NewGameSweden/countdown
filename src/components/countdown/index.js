@@ -4,8 +4,8 @@ import styles from './style.scss';
 export default class Countdown extends React.Component {
   constructor(props) {
     super(props);
-    var start = new Date("2016-06-06 20:00:00").getTime()-1000*60*60*2;
-    var end = new Date("2016-06-07").getTime()-1000*60*60*2;
+    var start = new Date("2016-06-06 20:00:00").getTime();
+    var end = new Date("2016-06-07").getTime();
     var current = new Date().getTime();
     var time = this.setTime(start, current);
     this.state = {
@@ -32,6 +32,7 @@ export default class Countdown extends React.Component {
     return (
       <div className={styles.main}>
         <h3>{out}</h3>
+        <h4>160606 20:00</h4>
       </div>
     );
   }

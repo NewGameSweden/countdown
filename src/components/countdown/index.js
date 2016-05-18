@@ -24,15 +24,19 @@ export default class Countdown extends React.Component {
   render() {
     var { currentTime, end, daysLeft, hoursLeft, 
         minutesLeft, secondsLeft} = this.state;
-    var out;
-    
+    var out, date;
+    if (daysLeft < 0 || hoursLeft < 0 || minutesLeft < 0 || secondsLeft < 0) {
+      out = "";
+      date = "";
+    } else {
       out = this.format(daysLeft) + ":" + this.format(hoursLeft) + ":" +
       this.format(minutesLeft) + ":" + this.format(secondsLeft);
-    
+      date = "160606 20:00";
+    }
     return (
       <div className={styles.main}>
         <h3>{out}</h3>
-        <h4>160606 20:00</h4>
+        <h4>{date}</h4>
       </div>
     );
   }

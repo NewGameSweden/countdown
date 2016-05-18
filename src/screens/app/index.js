@@ -29,6 +29,9 @@ export default class App extends Component {
               ga('send', 'pageview'); }`
             }
           ]}
+          meta = {[
+            {name: "theme-color", content: "#000"}
+          ]}
         />
         { this.props.children }
       </div>
